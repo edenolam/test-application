@@ -1,0 +1,16 @@
+<li class="list-group-item">
+
+  <p> maj : {{ created_at | date: 'short'}}</p>
+
+  <p [ngStyle]="{color: getColor()}">Title : {{title}}</p>
+  <input type="text" class="form-control" [(ngModel)]="title">
+
+  <p [ngStyle]="{color: getColor()}">Content : {{getContent()}}</p>
+  <input type="text" class="form-control" [(ngModel)]="content">
+
+  <div>like : {{lovelts}}</div>
+  <button class="btn btn-success" (click)="onLove()">love it</button>
+  <button class="btn btn-danger" (click)="ondontLove()">dont love</button>
+
+</li>
+
