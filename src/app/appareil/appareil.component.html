@@ -1,0 +1,9 @@
+<li [ngClass]="{'list-group-item': true,
+    'list-group-item-success': appareil.status,
+    'list-group-item-danger': !appareil.status}">
+  <div class="red" *ngIf="!appareil.status"></div>
+  <div class="green" *ngIf="appareil.status"></div>
+  <h4 [ngStyle]="{'color': getColor()}">Appareil : {{ appareil.name }} – Statut : {{ getStatus() }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="appareil.name">
+  <a [routerLink]="['/appareil/' + appareil.id]">Detail</a>
+</li>
